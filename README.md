@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/31763835/README.md)# 🏒 Air Hockey --- Projeto CConecta
+# 🏒 Air Hockey --- Projeto CConecta
 
 Um jogo de **Air Hockey desenvolvido em HTML, CSS e JavaScript**, criado
 como um projeto prático do curso de **Prompt Engineering** do
