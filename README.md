@@ -1,551 +1,748 @@
-# 🏒 Air Hockey --- Projeto CConecta
+# 🏒 Air Hockey com Inteligência Artificial
 
-Um jogo de **Air Hockey desenvolvido em HTML, CSS e JavaScript**, criado
-como um projeto prático do curso de **Prompt Engineering** do
-**CConecta**.
+> 🎓 Projeto prático do curso de **Prompts e Inteligência Artificial** — **CConecta**
 
-A proposta do projeto é mostrar como uma ideia descrita em linguagem
-natural pode ser transformada, com o auxílio de IA e bons prompts, em
-uma aplicação web interativa e funcional.
+Este projeto é um jogo de **Air Hockey criado com a ajuda da Inteligência Artificial**.
 
-O jogo funciona diretamente no navegador e não depende de frameworks ou
-bibliotecas externas.
+O objetivo não é apenas jogar, mas mostrar na prática como uma pessoa que **não sabe programação** pode utilizar a IA para transformar uma ideia em um projeto funcionando.
 
-------------------------------------------------------------------------
+Você não precisa ser programador para entender este projeto.
 
-## 🎯 Objetivo do projeto
+Ao longo deste README, vamos explicar tudo de forma simples.
 
-Este projeto faz parte da proposta educacional do **CConecta** de
-ensinar os alunos a utilizar Inteligência Artificial de maneira prática
-e criativa.
+---
 
-Em vez de apenas aprender conceitos teóricos sobre prompts, o aluno pode
-utilizar a IA para:
+## 🎮 O que é este projeto?
 
--   transformar uma ideia em um projeto;
--   especificar funcionalidades;
--   solicitar código;
--   testar o resultado;
--   identificar problemas;
--   pedir melhorias;
--   iterar até chegar a uma versão funcional.
+O projeto consiste em um jogo de **Air Hockey** que pode ser executado diretamente no navegador.
 
-O **Air Hockey** serve como um exemplo concreto desse processo.
+No jogo, dois jogadores disputam uma partida tentando colocar o disco no gol do adversário.
 
-------------------------------------------------------------------------
+### 🏆 Como funciona?
 
-## 🎮 Sobre o jogo
+* O Jogador 1 controla o mallet rosa.
+* O Jogador 2 controla o mallet roxo.
+* O disco se movimenta pela mesa.
+* Cada gol aumenta o placar de um jogador.
+* O primeiro jogador a fazer **7 pontos vence**.
+* Também existe um modo para jogar **contra a máquina**.
+* O jogo possui tutorial, botão de pausa e opção de iniciar uma nova partida.
+* Os nomes dos jogadores podem ser alterados.
 
-O objetivo é simples: rebater o disco com o mallet e marcar pontos no
-gol adversário.
+---
 
-A partida termina quando um dos jogadores alcança **7 pontos**.
+# 🤖 Por que este projeto foi feito com IA?
 
-### Funcionalidades
+A proposta deste projeto é mostrar uma ideia importante:
 
--   🏒 Partida de Air Hockey no navegador;
--   👥 Modo para dois jogadores;
--   🤖 Modo contra a máquina/IA;
--   🎮 Controles por teclado;
--   📱 Controle por toque em dispositivos móveis;
--   ⏸️ Botão para pausar e continuar;
--   🔄 Botão para iniciar uma nova partida;
--   ✏️ Nomes dos jogadores editáveis;
--   🔥 Sistema de sequência de pontos;
--   🏆 Tela de vitória;
--   📖 Tutorial inicial explicando como jogar;
--   💡 Botão "Como jogar" para reabrir o tutorial;
--   ✨ Animações, efeitos visuais e rastro do disco;
--   📱 Layout responsivo para diferentes tamanhos de tela.
+> **Você não precisa saber programar para começar a criar com tecnologia.**
 
-------------------------------------------------------------------------
+A Inteligência Artificial pode ajudar uma pessoa a transformar uma ideia em código.
 
-## 🕹️ Controles
+Por exemplo, em vez de começar escrevendo centenas de linhas de programação, podemos explicar para a IA o que queremos:
 
-### Jogador 1
+> "Crie um jogo de Air Hockey que funcione no navegador, com dois jogadores, placar e controles pelo teclado."
 
-O Jogador 1 utiliza as **setas do teclado**:
+A IA pode então gerar uma primeira versão do projeto.
 
-  Tecla   Movimento
-  ------- -----------
-  ⬆️      Cima
-  ⬇️      Baixo
-  ⬅️      Esquerda
-  ➡️      Direita
+Depois disso, podemos continuar conversando com ela para:
 
-### Jogador 2
+* corrigir problemas;
+* melhorar o visual;
+* adicionar funcionalidades;
+* alterar as regras;
+* criar novos modos de jogo;
+* melhorar a experiência no celular;
+* organizar o código.
 
-No modo para dois jogadores, o Jogador 2 utiliza:
+Esse processo é conhecido como **Vibe Coding**.
 
-  Tecla   Movimento
-  ------- -----------
-  W       Cima
-  S       Baixo
-  A       Esquerda
-  D       Direita
+---
 
-### Modo contra a máquina
+# 💬 O que é Vibe Coding?
 
-No modo contra a máquina:
+Vibe Coding é uma forma de desenvolvimento em que utilizamos a **linguagem natural** para orientar a Inteligência Artificial na criação e alteração de código.
 
--   o Jogador 1 continua utilizando as setas;
--   o Jogador 2 é controlado automaticamente pelo computador.
+Em vez de pensar primeiro:
 
-O botão de modo alterna entre **dois jogadores** e **jogar contra a
-máquina**.
+> "Preciso escrever uma função JavaScript que faça determinada coisa..."
 
-------------------------------------------------------------------------
+Podemos começar pensando:
 
-## 📱 Dispositivos móveis
+> "Quero que, quando o jogador marcar dois gols seguidos, apareça uma mensagem informando que ele está em uma sequência."
 
-O jogo também possui suporte a interação por toque.
+A IA pode ajudar a transformar essa ideia em código.
 
-No celular:
+### 🧠 A lógica é:
 
--   o mallet do Jogador 1 pode ser arrastado diretamente;
--   o Jogador 2 possui interação por toque na região superior da mesa;
--   o jogo utiliza `touchstart`, `touchmove` e `touchend`;
--   o código procura preservar a rolagem da página quando o toque não
-    está sendo utilizado para controlar o jogo.
+**Ideia → Prompt → IA → Código → Teste → Correção → Novo prompt**
 
-------------------------------------------------------------------------
+Você conversa com a IA, testa o resultado e continua refinando o projeto.
 
-## 🧠 Como o jogo foi desenvolvido
+---
 
-O projeto foi construído utilizando tecnologias web fundamentais:
+# 🧩 O que existe dentro deste projeto?
 
-### HTML
+O jogo é composto por três partes principais:
 
-Responsável pela estrutura da aplicação, incluindo:
-
--   tutorial;
--   painel dos jogadores;
--   placar;
--   mesa;
--   mallets;
--   disco;
--   gols;
--   mensagens;
--   botões de controle.
-
-### CSS
-
-Responsável pela interface visual.
-
-O projeto utiliza:
-
--   CSS Variables;
--   `flexbox`;
--   `radial-gradient`;
--   `linear-gradient`;
--   `backdrop-filter`;
--   animações com `@keyframes`;
--   media queries;
--   layout responsivo;
--   efeitos de brilho e sombra.
-
-A interface utiliza uma estética inspirada em **glassmorphism**, com
-fundo escuro, transparências, gradientes e elementos luminosos.
-
-### JavaScript
-
-Responsável pela lógica do jogo.
-
-Entre as principais funções estão:
-
--   movimentação dos jogadores;
--   movimentação do disco;
--   colisão entre disco e mallets;
--   detecção de gols;
--   contagem de pontos;
--   sequência de pontos;
--   modo contra a máquina;
--   pausa;
--   reinício;
--   tutorial;
--   controles de teclado;
--   controles de toque;
--   atualização da interface;
--   loop de animação com `requestAnimationFrame()`.
-
-------------------------------------------------------------------------
-
-## ⚙️ Estrutura do projeto
-
-O projeto é propositalmente simples:
-
-``` text
-air-hockey/
+```text
+📁 air-hockey
 │
-├── index.html
-└── README.md
+├── 📄 index.html
+├── 🎨 style.css
+└── ⚙️ script.js
 ```
 
-Todo o jogo está concentrado no arquivo `index.html`, que contém:
+Não se preocupe se você não entende esses nomes.
 
-``` text
-HTML
-├── Estrutura da interface
-│
-CSS
-├── Estilos
-├── Responsividade
-└── Animações
-│
-JavaScript
-├── Estado do jogo
-├── Física básica
-├── Controles
-├── IA
-├── Tutorial
-└── Loop de animação
-```
+Vamos explicar cada um.
 
-Essa abordagem facilita a utilização do projeto em uma aula de
-programação, HTML/CSS/JavaScript ou Prompt Engineering.
+---
 
-------------------------------------------------------------------------
+# 🌐 1. HTML — A estrutura do projeto
 
-# 🤖 O projeto como exercício de Prompt Engineering
+O arquivo:
 
-O principal objetivo educacional não é simplesmente entregar o código do
-jogo.
-
-A ideia é ensinar o aluno a **construir o projeto através de instruções
-para uma IA**.
-
-Um bom prompt pode especificar:
-
-1.  o que deve ser criado;
-2.  quais tecnologias utilizar;
-3.  quais funcionalidades devem existir;
-4.  como a interface deve se comportar;
-5.  quais dispositivos devem ser suportados;
-6.  quais regras o jogo deve seguir;
-7.  como o código deve ser organizado;
-8.  quais problemas precisam ser corrigidos.
-
-O desenvolvimento pode ser realizado de forma iterativa.
-
-### Fluxo sugerido
-
-``` text
-IDEIA
-  ↓
-PROMPT
-  ↓
-PRIMEIRA VERSÃO
-  ↓
-TESTE
-  ↓
-IDENTIFICAÇÃO DE PROBLEMAS
-  ↓
-NOVO PROMPT
-  ↓
-MELHORIA
-  ↓
-TESTE NOVAMENTE
-```
-
-Esse processo mostra que **Prompt Engineering não significa apenas pedir
-"crie um jogo"**.
-
-Quanto mais clara for a especificação, maior a possibilidade de a IA
-produzir um resultado próximo do que foi imaginado.
-
-------------------------------------------------------------------------
-
-# ✍️ Prompts utilizados/sugeridos para o projeto
-
-> **Observação:** os prompts abaixo são uma reconstrução didática dos
-> tipos de instrução necessários para produzir e evoluir o projeto. Eles
-> servem como material do curso e não devem ser interpretados
-> necessariamente como uma transcrição literal de uma conversa
-> específica com uma IA.
-
-## Prompt 1 --- Criar a primeira versão
-
-``` text
-Crie um jogo completo de Air Hockey para navegador utilizando apenas HTML, CSS e JavaScript puro.
-
-Quero que todo o projeto esteja em um único arquivo index.html, sem frameworks ou bibliotecas externas.
-
-O jogo deve ter:
-- dois jogadores;
-- uma mesa de Air Hockey;
-- um disco;
-- dois mallets;
-- sistema de pontuação;
-- vitória quando um jogador chegar a 7 pontos;
-- movimentação com teclado;
-- botão para iniciar uma nova partida;
-- botão para pausar;
-- interface visual moderna;
-- layout responsivo.
-
-O Jogador 1 deve utilizar as setas do teclado.
-O Jogador 2 deve utilizar W, A, S e D.
-
-Crie uma interface visual moderna, com fundo escuro, gradientes, transparências, sombras e aparência semelhante a glassmorphism.
-
-O código deve ser funcional e pronto para ser aberto diretamente no navegador.
-```
-
-------------------------------------------------------------------------
-
-## Prompt 2 --- Adicionar modo contra a máquina
-
-``` text
-Agora evolua o jogo de Air Hockey existente.
-
-Adicione um modo "Jogar contra Máquina".
-
-Nesse modo:
-- o Jogador 1 continua sendo controlado pelas setas;
-- o Jogador 2 será controlado automaticamente pelo computador;
-- a máquina deve acompanhar a posição do disco;
-- o movimento da máquina deve ser limitado à metade superior da mesa;
-- deve existir um botão para alternar entre dois jogadores e contra a máquina;
-- ao trocar o modo, reposicione os dois mallets;
-- mantenha todas as funcionalidades existentes.
-
-Não remova funcionalidades que já existem.
-Entregue o código completo atualizado em um único index.html.
-```
-
-------------------------------------------------------------------------
-
-## Prompt 3 --- Criar o tutorial
-
-``` text
-Adicione ao jogo um tutorial inicial em formato de modal/overlay.
-
-O tutorial deve explicar:
-1. o objetivo do jogo;
-2. os controles do Jogador 1;
-3. os controles do Jogador 2;
-4. o modo contra a máquina;
-5. dicas rápidas.
-
-O tutorial deve possuir:
-- botão "Próximo";
-- botão "Pular";
-- indicadores de progresso;
-- botão para fechar o tutorial;
-- botão "Como jogar" na interface principal para abrir o tutorial novamente.
-
-Enquanto o tutorial estiver aberto, o jogo deve permanecer pausado.
-
-Mantenha o estilo visual do jogo.
-```
-
-------------------------------------------------------------------------
-
-## Prompt 4 --- Melhorar a experiência visual
-
-``` text
-Melhore a interface visual do jogo sem alterar suas regras principais.
-
-Quero uma aparência moderna e sofisticada utilizando apenas CSS.
-
-Adicione:
-- glassmorphism;
-- gradientes;
-- sombras;
-- efeitos de brilho;
-- animações sutis;
-- destaque visual para o jogador ativo;
-- animação quando um ponto for marcado;
-- efeito de tremor na mesa após um gol;
-- rastro visual acompanhando o disco;
-- mensagens de vitória;
-- interface responsiva para celular.
-
-Não utilize bibliotecas externas.
-Mantenha tudo dentro do index.html.
-```
-
-------------------------------------------------------------------------
-
-## Prompt 5 --- Adicionar suporte para celular
-
-``` text
-Adapte o jogo de Air Hockey para dispositivos móveis.
-
-Além dos controles por teclado, permita controlar os mallets por toque.
-
-Requisitos:
-- Jogador 1 pode arrastar seu próprio mallet;
-- Jogador 2 pode controlar seu mallet na região superior da mesa;
-- limite o movimento dos jogadores às suas respectivas áreas;
-- evite bloquear a rolagem da página quando o usuário não estiver tentando controlar o jogo;
-- mantenha os controles de teclado funcionando;
-- preserve o layout responsivo.
-
-Faça as alterações sem remover as funcionalidades existentes.
-```
-
-------------------------------------------------------------------------
-
-## Prompt 6 --- Corrigir problemas após os testes
-
-Um dos pontos mais importantes do projeto é mostrar que o
-desenvolvimento com IA é **iterativo**.
-
-Depois de testar o jogo, um aluno pode fornecer um problema específico
-para a IA:
-
-``` text
-Testei o jogo no celular e encontrei um problema.
-
-Quando tento rolar a página tocando fora do mallet, a página não rola corretamente.
-
-Analise o código atual e corrija somente o comportamento relacionado ao toque.
-
-O jogo deve:
-- continuar permitindo controlar o mallet por toque;
-- impedir o scroll somente enquanto o usuário estiver realmente controlando o mallet;
-- permitir o scroll normalmente quando o toque não estiver sendo utilizado para jogar;
-- manter todas as outras funcionalidades.
-
-Explique brevemente o que foi alterado e depois forneça o index.html completo atualizado.
-```
-
-------------------------------------------------------------------------
-
-# 🧪 O que o aluno pode aprender com este projeto
-
-Este projeto pode ser utilizado para trabalhar diferentes habilidades.
-
-### Prompt Engineering
-
--   criação de prompts detalhados;
--   especificação de requisitos;
--   divisão de problemas;
--   refinamento de instruções;
--   desenvolvimento iterativo;
--   depuração utilizando IA.
-
-### Programação
-
--   estrutura HTML;
--   CSS moderno;
--   JavaScript;
--   manipulação do DOM;
--   eventos de teclado;
--   eventos de toque;
--   animações;
--   `requestAnimationFrame()`;
--   lógica condicional;
--   estado de uma aplicação;
--   colisão entre objetos;
--   implementação de uma IA simples.
-
-### Pensamento computacional
-
-O aluno também pode aprender a decompor uma ideia:
-
-``` text
-"Quero criar um jogo de Air Hockey"
-             ↓
-        Quais elementos?
-             ↓
-      Quais regras?
-             ↓
-      Quais controles?
-             ↓
-      Como marcar pontos?
-             ↓
-       Como detectar gol?
-             ↓
-      Como criar uma IA?
-             ↓
-      Como testar e corrigir?
-```
-
-------------------------------------------------------------------------
-
-# 🚀 Como executar
-
-Não é necessário instalar nada.
-
-### Opção 1 --- Abrir diretamente
-
-Baixe/clique no arquivo:
-
-``` text
+```text
 index.html
 ```
 
-Depois abra-o com qualquer navegador moderno.
+é responsável pela **estrutura da página**.
 
-### Opção 2 --- GitHub Pages
+Pense no HTML como se fosse o **esqueleto** do jogo.
 
-Como o projeto é composto por HTML, CSS e JavaScript no navegador, ele
-pode ser publicado utilizando o **GitHub Pages**.
+Ele define coisas como:
 
-Depois de publicar, o jogo pode ser acessado através de um endereço web
-e compartilhado com os alunos.
+* onde fica o título;
+* onde ficam os jogadores;
+* onde aparece o placar;
+* onde fica a mesa;
+* onde ficam os botões;
+* onde aparece o tutorial.
 
-------------------------------------------------------------------------
+Por exemplo, o HTML possui elementos para representar os jogadores e seus respectivos placares.
 
-# 📂 Arquivo principal
+### 🧠 Uma forma simples de entender:
 
-### `index.html`
+```text
+HTML = estrutura
+```
 
-Contém toda a implementação do jogo.
+É como construir uma casa:
 
-O código inclui a interface, estilos e lógica em um único arquivo,
-tornando o projeto fácil de estudar e modificar.
+> HTML define onde ficam as paredes, portas, janelas e cômodos.
 
-------------------------------------------------------------------------
+---
 
-# 🎓 Projeto educacional --- CConecta
+# 🎨 2. CSS — A aparência do projeto
 
-Este projeto integra o **CConecta** e pode ser utilizado como atividade
-prática dentro de um curso de **Prompt Engineering e Inteligência
-Artificial**.
+O arquivo:
 
-A proposta é aproximar o aluno da tecnologia através de um projeto
-concreto: em vez de apenas aprender o que é um prompt, o aluno utiliza
-prompts para **imaginar, construir, testar e melhorar um produto
-digital**.
+```text
+style.css
+```
 
-O projeto também demonstra uma ideia importante:
+é responsável pela **aparência do jogo**.
 
-> **A IA não substitui o processo de pensar. Ela pode ser utilizada como
-> uma ferramenta para transformar ideias em protótipos e ajudar a
-> resolver problemas.**
+Ele controla coisas como:
 
-------------------------------------------------------------------------
+* cores;
+* tamanhos;
+* espaçamentos;
+* fontes;
+* bordas;
+* sombras;
+* animações;
+* posicionamento;
+* adaptação para celular.
 
-## 🔮 Possíveis melhorias futuras
+Por exemplo, é o CSS que ajuda a criar o visual escuro e moderno da mesa de Air Hockey.
 
-O projeto pode continuar sendo desenvolvido pelos alunos.
+### 🧠 Uma forma simples de entender:
 
-Algumas possibilidades:
+```text
+CSS = aparência
+```
 
--   🏆 ranking de partidas;
--   💾 armazenamento do placar;
--   🔊 efeitos sonoros;
--   🎵 música de fundo;
--   ⚡ níveis de dificuldade da máquina;
--   🎨 escolha de temas;
--   🌐 multiplayer online;
--   🥇 sistema de campeonatos;
--   📊 estatísticas das partidas;
--   📱 controles virtuais para celular;
--   🎯 diferentes modos de jogo;
--   👤 perfis de jogadores.
+Voltando ao exemplo da casa:
 
-Cada nova funcionalidade pode ser utilizada como uma nova atividade de
-**Prompt Engineering**.
+> Se o HTML constrói a casa, o CSS decide a pintura, o tamanho dos cômodos, os móveis e a decoração.
 
-------------------------------------------------------------------------
+---
 
-## 📜 Licença
+# ⚙️ 3. JavaScript — O funcionamento do jogo
 
-Projeto desenvolvido para fins educacionais no âmbito do **CConecta**.
+O arquivo:
 
-Consulte os responsáveis pelo projeto antes de utilizar ou redistribuir
-o material em outros contextos.
+```text
+script.js
+```
+
+é responsável pela **lógica do jogo**.
+
+É aqui que ficam as instruções que fazem o jogo funcionar.
+
+Por exemplo:
+
+* movimentar os jogadores;
+* movimentar o disco;
+* detectar colisões;
+* contar os pontos;
+* determinar o vencedor;
+* controlar a inteligência artificial;
+* pausar o jogo;
+* iniciar uma nova partida;
+* controlar o tutorial;
+* responder aos comandos do teclado.
+
+### 🧠 Uma forma simples de entender:
+
+```text
+JavaScript = comportamento
+```
+
+No exemplo da casa:
+
+> HTML constrói a casa, CSS deixa a casa bonita e JavaScript faz as coisas acontecerem.
+
+---
+
+# 🏗️ Como as três partes trabalham juntas?
+
+Podemos resumir assim:
+
+```text
+                 🌐 HTML
+                Estrutura
+                    │
+                    ▼
+              🎨 CSS
+              Aparência
+                    │
+                    ▼
+            ⚙️ JavaScript
+             Funcionamento
+                    │
+                    ▼
+              🎮 JOGO
+```
+
+Ou, de maneira ainda mais simples:
+
+| Tecnologia | Função        |
+| ---------- | ------------- |
+| HTML       | Estrutura     |
+| CSS        | Aparência     |
+| JavaScript | Funcionamento |
+
+Você não precisa memorizar programação neste momento.
+
+O mais importante é entender **qual é o papel de cada arquivo**.
+
+---
+
+# 🎯 O que podemos aprender com este projeto?
+
+Este projeto foi pensado para ensinar que a IA pode ser utilizada como uma ferramenta de criação.
+
+Ao analisar o projeto, podemos aprender conceitos como:
+
+### 💡 Criação
+
+Transformar uma ideia em um projeto real.
+
+### 💬 Prompt
+
+Explicar para a IA aquilo que queremos criar.
+
+### 🔄 Iteração
+
+Pedir alterações e melhorias várias vezes.
+
+### 🧪 Teste
+
+Executar o projeto e verificar se tudo funciona.
+
+### 🐛 Correção
+
+Quando alguma coisa não funciona, explicar o problema para a IA e pedir ajuda.
+
+### 🚀 Evolução
+
+Começar com uma ideia simples e adicionar novas funcionalidades.
+
+---
+
+# 📝 Exemplos de prompts utilizados no projeto
+
+Os prompts são uma das partes mais importantes deste projeto.
+
+Eles mostram como podemos conversar com a IA para construir algo.
+
+## Prompt inicial
+
+Um exemplo de prompt para começar o projeto seria:
+
+> Crie um jogo de Air Hockey que funcione diretamente no navegador utilizando HTML, CSS e JavaScript. O jogo deve ter dois jogadores, uma mesa de Air Hockey, um disco, dois mallets, sistema de pontuação e condição de vitória.
+
+Esse prompt cria a **primeira versão**.
+
+Mas não precisamos parar por aí.
+
+---
+
+## 🎨 Melhorando o visual
+
+Depois podemos pedir:
+
+> Melhore o visual do jogo deixando a interface moderna, utilizando um estilo futurista, com efeito de vidro, gradientes, sombras e animações.
+
+---
+
+## 📱 Adaptando para celular
+
+Depois:
+
+> Faça o jogo funcionar também em telas de celular, adaptando o tamanho da mesa e permitindo controlar o mallet por toque.
+
+---
+
+## 🤖 Criando um adversário
+
+Podemos pedir:
+
+> Adicione um modo contra a máquina. Quando esse modo estiver ativado, o Jogador 2 deve ser controlado automaticamente pelo computador.
+
+---
+
+## ⏸️ Adicionando pausa
+
+Outro exemplo:
+
+> Adicione um botão para pausar e continuar a partida.
+
+---
+
+## 🏆 Criando uma condição de vitória
+
+Podemos pedir:
+
+> Faça a partida terminar quando um dos jogadores alcançar 7 pontos e mostre uma mensagem informando quem venceu.
+
+---
+
+# 🔄 O mais importante: não existe apenas um prompt
+
+Uma das principais lições deste projeto é que **criar algo com IA não significa escrever um único prompt perfeito**.
+
+Normalmente fazemos várias interações.
+
+Por exemplo:
+
+```text
+PROMPT 1
+"Crie um jogo de Air Hockey."
+
+        ↓
+
+TESTE
+
+        ↓
+
+PROMPT 2
+"Melhore o visual."
+
+        ↓
+
+TESTE
+
+        ↓
+
+PROMPT 3
+"Adicione modo contra a máquina."
+
+        ↓
+
+TESTE
+
+        ↓
+
+PROMPT 4
+"O jogo não está funcionando corretamente no celular."
+
+        ↓
+
+CORREÇÃO
+
+        ↓
+
+🎮 PROJETO FINAL
+```
+
+Esse processo é muito importante para aprender a trabalhar com IA.
+
+---
+
+# 🧠 Como escrever bons prompts?
+
+Um bom prompt normalmente explica:
+
+### 1. O que você quer
+
+> "Quero criar um jogo de Air Hockey."
+
+### 2. Como você quer
+
+> "Quero um visual moderno e futurista."
+
+### 3. Onde será utilizado
+
+> "O jogo deve funcionar no navegador."
+
+### 4. Quais funcionalidades devem existir
+
+> "Deve ter dois jogadores, placar e modo contra a máquina."
+
+### 5. Restrições
+
+> "Não utilize bibliotecas externas."
+
+Quanto mais claramente explicamos o objetivo, mais fácil fica para a IA entender o que queremos.
+
+---
+
+# 🔍 Como estudar este projeto sem saber programação?
+
+Você não precisa entender todas as linhas de código.
+
+Comece fazendo perguntas para a IA.
+
+Por exemplo:
+
+> "Explique este projeto como se eu nunca tivesse programado."
+
+Depois:
+
+> "Explique somente o arquivo index.html."
+
+Depois:
+
+> "Agora explique o style.css."
+
+E finalmente:
+
+> "Explique o script.js sem utilizar termos técnicos."
+
+A partir daí, você pode ir aumentando a dificuldade.
+
+---
+
+# 🧪 Experimente modificar o jogo
+
+Uma das melhores maneiras de aprender é experimentar.
+
+Abra o projeto e tente pedir para a IA modificar alguma coisa.
+
+### Exemplos:
+
+> "Mude a cor do jogador 1 para azul."
+
+> "Faça o jogo terminar com 10 pontos."
+
+> "Adicione um botão para reiniciar o jogo."
+
+> "Mude o nome Air Hockey para CConecta Air Hockey."
+
+> "Adicione um contador de tempo."
+
+> "Crie três níveis de dificuldade para a máquina."
+
+> "Adicione uma tela inicial."
+
+Você não precisa saber exatamente **como programar essas mudanças**.
+
+Seu trabalho é explicar claramente **o que você deseja**.
+
+A IA pode ajudar com a parte técnica.
+
+---
+
+# 📂 Estrutura do projeto
+
+A estrutura atual é:
+
+```text
+air-hockey/
+│
+├── index.html
+├── style.css
+└── script.js
+```
+
+### 📄 index.html
+
+Contém a estrutura visual da página.
+
+### 🎨 style.css
+
+Contém os estilos e o design.
+
+### ⚙️ script.js
+
+Contém a lógica e o funcionamento do jogo.
+
+Essa separação torna o projeto mais organizado e facilita futuras alterações.
+
+---
+
+# ▶️ Como executar o jogo?
+
+Você não precisa instalar um programa complicado.
+
+Basta ter os três arquivos na mesma pasta:
+
+```text
+index.html
+style.css
+script.js
+```
+
+Depois:
+
+1. Abra a pasta.
+2. Clique duas vezes em `index.html`.
+3. O navegador abrirá o jogo.
+4. Clique em **Como jogar** para visualizar o tutorial.
+
+---
+
+# 🎮 Controles
+
+## Jogador 1
+
+O Jogador 1 utiliza as **setas do teclado**:
+
+```text
+       ↑
+    ←     →
+       ↓
+```
+
+O mallet rosa fica na parte inferior da mesa.
+
+---
+
+## Jogador 2
+
+No modo de dois jogadores, o Jogador 2 utiliza:
+
+```text
+       W
+    A     D
+       S
+```
+
+O mallet roxo fica na parte superior.
+
+---
+
+# 🤖 Modo contra a máquina
+
+O jogo também possui um modo contra a máquina.
+
+Nesse modo:
+
+```text
+Você → Jogador 1
+        ↓
+      SETAS
+
+Máquina → Jogador 2
+          ↓
+       computador
+```
+
+O computador movimenta automaticamente o mallet do Jogador 2.
+
+---
+
+# 🏆 Sistema de pontuação
+
+Cada vez que o disco entra no gol de um jogador, o adversário recebe um ponto.
+
+O jogo termina quando um jogador alcança:
+
+```text
+🏆 7 pontos
+```
+
+Depois disso, aparece uma mensagem informando o vencedor.
+
+---
+
+# 📱 Compatibilidade com celular
+
+O projeto também possui suporte para dispositivos móveis.
+
+No celular, é possível utilizar o toque para movimentar os mallets.
+
+Isso é um exemplo de como podemos utilizar a IA para adaptar um projeto existente para diferentes dispositivos.
+
+---
+
+# 🎓 Relação com o CConecta
+
+Este projeto faz parte da proposta educacional do **CConecta**.
+
+A ideia é utilizar a Inteligência Artificial não apenas para conversar ou fazer perguntas, mas como uma ferramenta para **criar projetos reais**.
+
+O Air Hockey representa um projeto prático porque reúne várias possibilidades:
+
+* criatividade;
+* tecnologia;
+* resolução de problemas;
+* criação de prompts;
+* testes;
+* interação com IA;
+* desenvolvimento de um produto digital.
+
+O objetivo não é transformar o aluno imediatamente em programador.
+
+O objetivo é mostrar que ele pode **ter uma ideia, conversar com a IA e começar a construir**.
+
+---
+
+# 🚀 O que você pode criar depois?
+
+Depois de entender este projeto, você pode utilizar a mesma lógica para criar outros projetos.
+
+Por exemplo:
+
+🎮 Jogos
+
+* Pong
+* Jogo da memória
+* Quiz
+* Snake
+* Jogo de plataforma
+
+📚 Projetos educacionais
+
+* Quiz de matemática
+* Jogo de perguntas
+* Simulador
+* Flashcards
+
+💻 Aplicações
+
+* Calculadora
+* Lista de tarefas
+* Cronômetro
+* Agenda
+* Sistema de pontuação
+
+A ideia é sempre a mesma:
+
+```text
+💡 IDEIA
+   ↓
+💬 PROMPT
+   ↓
+🤖 IA
+   ↓
+💻 PROJETO
+   ↓
+🧪 TESTE
+   ↓
+🔧 MELHORIAS
+   ↓
+🚀 NOVA VERSÃO
+```
+
+---
+
+# 🌟 Principal aprendizado
+
+O principal aprendizado deste projeto não é decorar HTML, CSS ou JavaScript.
+
+É aprender a **comunicar uma ideia para uma Inteligência Artificial**.
+
+Programar tradicionalmente exige escrever as instruções diretamente.
+
+Com ferramentas de IA, podemos começar descrevendo o resultado que queremos alcançar e utilizar a IA como parceira durante o processo.
+
+Isso não significa que não precisamos aprender tecnologia.
+
+Pelo contrário.
+
+Quanto mais entendemos o funcionamento de um projeto, melhor conseguimos:
+
+* escrever prompts;
+* identificar problemas;
+* avaliar respostas da IA;
+* corrigir erros;
+* melhorar nossos projetos.
+
+---
+
+# 🧠 Desafio para o aluno
+
+Agora é sua vez.
+
+Escolha **uma funcionalidade nova** para o Air Hockey.
+
+Por exemplo:
+
+> "Quero adicionar um modo difícil em que a máquina fique mais rápida."
+
+Não tente descobrir sozinho como programar.
+
+Primeiro, transforme sua ideia em um prompt.
+
+Depois peça para a IA implementar a mudança.
+
+Teste.
+
+Veja o que aconteceu.
+
+Se algo estiver errado, explique o problema para a IA.
+
+E tente novamente.
+
+Esse é o verdadeiro exercício.
+
+---
+
+# 🏁 Conclusão
+
+Este Air Hockey é mais do que um jogo.
+
+Ele é um exemplo de como podemos utilizar **Inteligência Artificial + criatividade + bons prompts** para transformar uma ideia em algo concreto.
+
+Você começou com uma ideia:
+
+> 🏒 "Quero criar um jogo."
+
+E terminou com:
+
+> 🎮 **Um jogo funcionando no navegador.**
+
+Essa é a proposta do projeto.
+
+**Não comece pensando "eu não sei programar".**
+
+Comece pensando:
+
+> **"O que eu quero criar?"**
+
+Depois, utilize a IA para ajudar você a descobrir **como transformar essa ideia em realidade.**
+
+---
+
+## 🤝 Projeto
+
+**CConecta**
+
+Projeto educacional desenvolvido como atividade prática de aprendizagem de **Prompts e Inteligência Artificial**.
+
+🏒 **Air Hockey — Criando com IA**
