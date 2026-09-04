@@ -213,13 +213,63 @@ function collideMallet(i) {
 }
 
 function moveAI() {
-  // IA controla o mallet 1 (J2), restrito à metade esquerda da mesa
-  const target = state.puck;
+  // IA controla o mallet 1 (J2), restrito à metade esquerda da mesa (zona defensiva).
+  // A IA tenta se posicionar um pouco "atrás" do disco (do lado do próprio gol)
+  // para empurrá-lo para frente, em vez de simplesmente seguir a posição do disco
+  // (o que fazia o disco ficar preso/parado em cantos).
+  const puck = state.puck;
   const ai = state.mallets[1];
-  ai.x += (Math.min(0.45, Math.max(0.08, target.x)) - ai.x) * 0.045;
-  ai.y += (target.y - ai.y) * 0.055;
-  ai.x = Math.max(0.08, Math.min(0.45, ai.x));
+  const zoneMin = 0.08, zoneMax = 0.45;
+
+  let targetX, targetY, lerpX, lerpY;
+
+  if (puck.x <= zoneMax + 0.05) {
+    // Disco está (ou perto de estar) na área da IA: ataca com decisão,
+    // se posicionando um pouco à esquerda do disco para empurrá-lo para a direita.
+    targetX = Math.max(zoneMin, Math.min(zoneMax, puck.x - 0.05));
+    targetY = puck.y;
+    lerpX = 0.14;
+    lerpY = 0.16;
+  } else {
+    // Disco longe: volta para uma posição de cobertura central da própria zona.
+    targetX = (zoneMin + zoneMax) / 2 + 0.05;
+    targetY = 0.5 + (puck.y - 0.5) * 0.35;
+    lerpX = 0.06;
+    lerpY = 0.06;
+  }
+
+  ai.x += (targetX - ai.x) * lerpX;
+  ai.y += (targetY - ai.y) * lerpY;
+  ai.x = Math.max(zoneMin, Math.min(zoneMax, ai.x));
   ai.y = Math.max(0.10, Math.min(0.90, ai.y));
+}
+
+// ============================================================
+//  ANTI-TRAVAMENTO
+//  Evita que o disco fique "preso" parado em um canto/parede
+//  (pode acontecer por causa da física simplificada de colisão).
+// ============================================================
+let stuckTimer = 0;
+function checkStuck(dt) {
+  const speed = Math.hypot(state.puck.vx, state.puck.vy);
+  const nearWallX = state.puck.x < 0.10 || state.puck.x > 0.90;
+  const nearWallY = state.puck.y < 0.12 || state.puck.y > 0.88;
+
+  if (speed < 0.00012 && (nearWallX || nearWallY)) {
+    stuckTimer += dt;
+  } else {
+    stuckTimer = 0;
+  }
+
+  if (stuckTimer > 500) {
+    // Dá um empurrão para tirar o disco do canto, em direção ao centro da mesa.
+    const towardCenterX = (0.5 - state.puck.x);
+    const towardCenterY = (0.5 - state.puck.y);
+    const mag = Math.hypot(towardCenterX, towardCenterY) || 1;
+    state.puck.vx = (towardCenterX / mag) * 0.0005 + (Math.random() - 0.5) * 0.0002;
+    state.puck.vy = (towardCenterY / mag) * 0.0005 + (Math.random() - 0.5) * 0.0002;
+    stuckTimer = 0;
+  }
 }
 
 // ============================================================
@@ -321,6 +371,8 @@ function loop(now) {
 
     state.puck.x += state.puck.vx * dt;
     state.puck.y += state.puck.vy * dt;
+
+    checkStuck(dt);
 
     // Paredes superior/inferior (laterais compridas da mesa deitada)
     if (state.puck.y < 0.035) { state.puck.y = 0.035; state.puck.vy *= -1; }
