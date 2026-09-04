@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Air Hockey</title>
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -19,7 +19,7 @@
     <div class="tutorial-step" data-step="1">
       <span class="tutorial-icon">🕹️</span>
       <div class="tutorial-title">Controles do Jogador 1</div>
-      <div class="tutorial-text">Use as setas do teclado para mover seu mallet rosa (na parte de baixo da mesa).</div>
+      <div class="tutorial-text">Use as setas do teclado para mover seu mallet rosa (do lado direito da mesa).</div>
       <div class="tutorial-keys">
         <span class="key pink">⬆</span><span class="key pink">⬇</span><span class="key pink">⬅</span><span class="key pink">➡</span>
       </div>
@@ -27,7 +27,7 @@
     <div class="tutorial-step" data-step="2">
       <span class="tutorial-icon">🕹️</span>
       <div class="tutorial-title">Controles do Jogador 2</div>
-      <div class="tutorial-text">Em modo dois jogadores, o Jogador 2 usa WASD para mover o mallet roxo (na parte de cima).</div>
+      <div class="tutorial-text">Em modo dois jogadores, o Jogador 2 usa WASD para mover o mallet roxo (do lado esquerdo da mesa).</div>
       <div class="tutorial-keys">
         <span class="key purple">W</span><span class="key purple">A</span><span class="key purple">S</span><span class="key purple">D</span>
       </div>
@@ -77,15 +77,16 @@
 
   <div class="center">
     <div class="air-table" id="airTable">
-      <div class="goal goal--top"></div>
-      <div class="goal goal--bottom"></div>
+      <div class="hint" id="hint">J1 setas · J2 WASD</div>
+      <div class="goal goal--left"></div>
+      <div class="goal goal--right"></div>
       <div class="center-line"></div>
       <div class="center-circle"></div>
       <div class="puck" id="puck"></div>
       <div class="mallet mallet--0" id="mallet0"></div>
       <div class="mallet mallet--1" id="mallet1"></div>
-      <div class="goal-label goal-label--top">J2</div>
-      <div class="goal-label goal-label--bottom">J1</div>
+      <div class="goal-label goal-label--left">J2</div>
+      <div class="goal-label goal-label--right">J1</div>
 
       <div class="message hidden" id="message"></div>
     </div>
@@ -98,6 +99,8 @@
     <button class="btn btn--help" id="helpBtn">Como jogar</button>
   </div>
 </main>
-    <script src="script.js"></script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
