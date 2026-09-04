@@ -101,8 +101,8 @@ function resetPuck(direction = Math.random() > 0.5 ? 1 : -1) {
   state.puck.x = 0.5;
   state.puck.y = 0.5;
   const angle = (Math.random() * 0.9 - 0.45);
-  state.puck.vy = Math.sin(angle) * 0.00028;
-  state.puck.vx = direction * Math.cos(angle) * 0.00038;
+  state.puck.vy = Math.sin(angle) * 0.00024;
+  state.puck.vx = direction * Math.cos(angle) * 0.00032;
 }
 
 function updateMallets() {
@@ -192,16 +192,20 @@ function collideMallet(i) {
   const dx = state.puck.x - state.mallets[i].x;
   const dy = state.puck.y - state.mallets[i].y;
   const dist = Math.hypot(dx, dy);
-  const radius = 0.095;
+  const radius = 0.085;
 
   if (dist < radius) {
     const nx = dx / (dist || 1);
     const ny = dy / (dist || 1);
-    const speed = Math.max(Math.hypot(state.puck.vx, state.puck.vy), 0.00035);
+    const currentSpeed = Math.hypot(state.puck.vx, state.puck.vy);
+    const MAX_SPEED = 0.00075;
+    const MIN_SPEED = 0.00035;
+    let speed = Math.max(currentSpeed, MIN_SPEED) * 1.06;
+    speed = Math.min(speed, MAX_SPEED);
     state.puck.x = state.mallets[i].x + nx * radius;
     state.puck.y = state.mallets[i].y + ny * radius;
-    state.puck.vx = nx * speed * 1.12;
-    state.puck.vy = ny * speed * 1.12;
+    state.puck.vx = nx * speed;
+    state.puck.vy = ny * speed;
 
     malletEls[i].style.transform = 'scale(1.12)';
     setTimeout(() => { malletEls[i].style.transform = 'scale(1)'; }, 90);
@@ -221,7 +225,7 @@ function moveAI() {
 // ============================================================
 //  CONTROLE TECLADO
 // ============================================================
-const MALLET_SPEED = 0.0008;
+const MALLET_SPEED = 0.0005;
 
 function moveMalletsByKeyboard(dt) {
   let dx1 = 0, dy1 = 0;
