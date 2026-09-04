@@ -214,35 +214,48 @@ function collideMallet(i) {
 
 function moveAI() {
   // IA controla o mallet 1 (J2), restrito à metade esquerda da mesa (zona defensiva).
-  // A IA tenta se posicionar um pouco "atrás" do disco (do lado do próprio gol)
-  // para empurrá-lo para frente, em vez de simplesmente seguir a posição do disco
-  // (o que fazia o disco ficar preso/parado em cantos).
+  // Velocidade e reação limitadas para não ficar imbatível — parecido com um jogador
+  // humano de nível médio, não um robô perfeito.
   const puck = state.puck;
   const ai = state.mallets[1];
   const zoneMin = 0.08, zoneMax = 0.45;
+  const MAX_AI_STEP = 0.0135; // deslocamento máximo por frame (equivalente ao jogador humano)
 
   let targetX, targetY, lerpX, lerpY;
 
   if (puck.x <= zoneMax + 0.05) {
-    // Disco está (ou perto de estar) na área da IA: ataca com decisão,
-    // se posicionando um pouco à esquerda do disco para empurrá-lo para a direita.
-    targetX = Math.max(zoneMin, Math.min(zoneMax, puck.x - 0.05));
-    targetY = puck.y;
-    lerpX = 0.14;
-    lerpY = 0.16;
+    // Disco está (ou perto de estar) na área da IA: vai até ele, mas com
+    // uma pequena imprecisão para não ser perfeita.
+    targetX = Math.max(zoneMin, Math.min(zoneMax, puck.x - 0.05 + aiError.x));
+    targetY = puck.y + aiError.y;
+    lerpX = 0.07;
+    lerpY = 0.08;
   } else {
-    // Disco longe: volta para uma posição de cobertura central da própria zona.
+    // Disco longe: volta para uma posição de cobertura, sem pressa.
     targetX = (zoneMin + zoneMax) / 2 + 0.05;
-    targetY = 0.5 + (puck.y - 0.5) * 0.35;
-    lerpX = 0.06;
-    lerpY = 0.06;
+    targetY = 0.5 + (puck.y - 0.5) * 0.3;
+    lerpX = 0.025;
+    lerpY = 0.03;
   }
 
-  ai.x += (targetX - ai.x) * lerpX;
-  ai.y += (targetY - ai.y) * lerpY;
+  let dx = (targetX - ai.x) * lerpX;
+  let dy = (targetY - ai.y) * lerpY;
+
+  // Limita a velocidade máxima da IA (mesma ordem de grandeza do jogador humano).
+  dx = Math.max(-MAX_AI_STEP, Math.min(MAX_AI_STEP, dx));
+  dy = Math.max(-MAX_AI_STEP, Math.min(MAX_AI_STEP, dy));
+
+  ai.x += dx;
+  ai.y += dy;
   ai.x = Math.max(zoneMin, Math.min(zoneMax, ai.x));
   ai.y = Math.max(0.10, Math.min(0.90, ai.y));
 }
+
+// Pequeno erro de mira da IA, atualizado periodicamente (evita precisão robótica)
+let aiError = { x: 0, y: 0 };
+setInterval(() => {
+  aiError = { x: (Math.random() - 0.5) * 0.07, y: (Math.random() - 0.5) * 0.10 };
+}, 650);
 
 // ============================================================
 //  ANTI-TRAVAMENTO
